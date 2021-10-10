@@ -8,6 +8,7 @@ import formatWeather from './utils/utils';
 
 function App() {
   const [weather, setWeather] = useState({});
+  const [invalidLoc, setInvalidLoc] = useState(false);
 
   useEffect(() => {
     const setCurrentWeather = async () => {
@@ -19,14 +20,20 @@ function App() {
   }, []);
 
   const locSubmit = async (loc) => {
-    const { location, main, weather } = await getWeather(loc);
-    setWeather(formatWeather(location, main, weather));
+    const { location, main, weather, error } = await getWeather(loc);
+    if (error) {
+      setInvalidLoc(true);
+      return;
+    } else {
+      setWeather(formatWeather(location, main, weather));
+      setInvalidLoc(false);
+    }
   };
 
   return (
     <div className="App">
       <Header />
-      <Input locSubmit={locSubmit} />
+      <Input locSubmit={locSubmit} invalidLoc={invalidLoc} />
       <Info weather={weather} />
     </div>
   );

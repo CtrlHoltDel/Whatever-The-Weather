@@ -5,11 +5,14 @@ export const getWeather = async (loc) => {
     `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${API_KEY}`
   );
 
-  const {
-    coord: { lat, lon },
-    main,
-    weather,
-  } = await res.json();
+  const initialRes = await res.json();
+
+  if (initialRes.message) {
+    return { error: initialRes.message };
+  }
+
+  const { coord, main, weather } = initialRes;
+  const { lat, lon } = coord;
 
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`
