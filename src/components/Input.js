@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BiSearchAlt2 } from 'react-icons/bi';
+import { BiSearchAlt } from 'react-icons/bi';
 
 const Input = ({ locSubmit, invalidLoc }) => {
   const [location, setLocation] = useState('');
@@ -24,7 +24,7 @@ const Input = ({ locSubmit, invalidLoc }) => {
           onChange={onChange}
         />
         <button type="submit">
-          <BiSearchAlt2 />
+          <BiSearchAlt />
         </button>
       </form>
       {invalidLoc && <div id="form_error">Error</div>}

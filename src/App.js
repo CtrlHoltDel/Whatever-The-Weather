@@ -9,6 +9,7 @@ import formatWeather from './utils/utils';
 function App() {
   const [weather, setWeather] = useState({});
   const [invalidLoc, setInvalidLoc] = useState(false);
+  const [celsius, setCelsius] = useState(true);
 
   useEffect(() => {
     const setCurrentWeather = async () => {
@@ -30,11 +31,17 @@ function App() {
     }
   };
 
+  const scaleToggle = () => {
+    celsius ? setCelsius(false) : setCelsius(true);
+  };
+
   return (
     <div className="App">
-      <Header />
-      <Input locSubmit={locSubmit} invalidLoc={invalidLoc} />
-      <Info weather={weather} />
+      <div id="mainContainer">
+        <Header scaleToggle={scaleToggle} celsius={celsius} />
+        <Input locSubmit={locSubmit} invalidLoc={invalidLoc} />
+        <Info weather={weather} celsius={celsius} />
+      </div>
     </div>
   );
 }

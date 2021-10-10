@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#mainContainer {
+  margin: 20px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h1 {
+  font-weight: bolder;
+}
+
+header button {
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+header button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#form_container {
+  height: 5rem;
+  margin-top: 0.5rem;
+}
+
+#form_container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#form_container form #location_input {
+  width: 75%;
+  max-width: 450px;
+  border: none;
+  color: white;
+  padding-left: 15px;
+  background-color: #1a659e;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 1.3rem;
+}
+
+#form_container form #location_input:focus {
+  outline: none;
+}
+
+#form_container form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+  border: none;
+  padding: none;
+  background-color: #004e89;
+  font-size: 1.5rem;
+  padding: 10px 0px;
+  color: white;
+  border-radius: 0px 5px 5px 0px;
+}
+
+#form_container form button:hover {
+  cursor: pointer;
+  background-color: #1a659e;
+  color: white;
+}
+/*# sourceMappingURL=App.css.map */
