@@ -5,16 +5,17 @@ export const getWeather = async (loc) => {
     `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${API_KEY}`
   );
 
-  const data = await res.json();
-
   const {
-    name,
-    main: { temp, feels_like },
-  } = data;
+    coord: { lat, lon },
+    main,
+    weather,
+  } = await res.json();
 
-  return {
-    name,
-    temp: (temp - 273.15).toFixed(2),
-    feels_like: (feels_like - 273.15).toFixed(2),
-  };
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+  );
+
+  const { daily } = await response.json();
+
+  return { location: loc, main, weather, daily };
 };

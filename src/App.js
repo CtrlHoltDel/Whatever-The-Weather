@@ -1,35 +1,33 @@
-import Header from './components/Header.js';
 import './style/App.css';
-import { getWeather } from './actions/';
-import CurrentWeather from './components/CurrentWeather.js';
 import { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Input from './components/Input';
+import Info from './components/Info';
+import { getWeather } from './actions';
+import formatWeather from './utils/utils';
 
 function App() {
-  const [weather, setWeather] = useState({
-    name: '',
-    temp: '',
-    feels_like: '',
-  });
+  const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    const getInitialWeather = async () => {
-      const weatherInfo = await getWeather('Doncaster');
-      setWeather(weatherInfo);
+    const setCurrentWeather = async () => {
+      const { location, main, weather } = await getWeather('Doncaster');
+      setWeather(formatWeather(location, main, weather));
     };
 
-    getInitialWeather();
+    setCurrentWeather();
   }, []);
 
-  const onSearch = async (country) => {
-    const res = await getWeather(country);
-
-    setWeather(res);
+  const locSubmit = async (loc) => {
+    const { location, main, weather } = await getWeather(loc);
+    setWeather(formatWeather(location, main, weather));
   };
 
   return (
     <div className="App">
-      <Header onSearch={onSearch} />
-      <CurrentWeather weather={weather} />
+      <Header />
+      <Input locSubmit={locSubmit} />
+      <Info weather={weather} />
     </div>
   );
 }
