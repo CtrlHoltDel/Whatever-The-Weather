@@ -1,34 +1,16 @@
 import React from 'react';
-import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
+import CurrWeather from './CurrWeather';
+import WeekForecast from './WeekForecast';
 
 const Info = ({ weather, celsius }) => {
-  const { location, temp, temp_min, temp_max, description, img } = weather;
+  const { daily } = weather;
 
-  const cToF = (c) => {
-    return (c * 1.8 + 32).toFixed(1);
-  };
+  console.log(weather);
 
   return (
     <div id="body_container" className="content">
-      <div className="curr_info">
-        <div id="curr_info_header">
-        <h2>{location}</h2>
-          
-        <img src={img} alt="" />
-        </div>  
-        <p id="curr_description">{description}</p>
-        <p id="curr_temp">{celsius ? `${temp} °C` : `${cToF(temp)} °F`}</p>
-        <div id="extra_temp_info">
-          <p id="curr_temp_max">
-            <FaTemperatureHigh className="tempIcon" />
-            {celsius ? `${temp_max} °C` : `${cToF(temp_max)} °F`}
-          </p>
-          <p id="curr_temp_min">
-            <FaTemperatureLow className="tempIcon" />
-            {celsius ? `${temp_min} °C` : `${cToF(temp_min)} °F`}
-          </p>
-        </div>
-      </div>
+      <CurrWeather weather={weather} celsius={celsius} />
+      <WeekForecast daily={daily} />
     </div>
   );
 };

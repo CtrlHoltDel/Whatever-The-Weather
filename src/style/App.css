@@ -148,6 +148,7 @@ header button:hover {
 #form_container #form_error {
   background-color: #9c3737;
   width: 60%;
+  max-width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
