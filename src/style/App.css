@@ -80,7 +80,6 @@ header button {
   border: none;
   border-radius: 4px;
   padding: 10px 30px;
-  font-weight: 900;
   font-size: 1.3rem;
   color: #004e89;
   font-family: 'Staatliches', cursive;
@@ -88,6 +87,7 @@ header button {
 
 header .selectedScale {
   color: #001e35;
+  font-weight: 900;
 }
 
 header button:hover {
