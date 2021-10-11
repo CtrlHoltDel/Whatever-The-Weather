@@ -6,7 +6,7 @@
 }
 
 .App {
-  min-height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,20 +17,41 @@
           flex-direction: column;
 }
 
-#mainContainer {
-  margin: 20px;
+@media (min-width: 650px) {
+  header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 20px;
+  }
+  header h1 {
+    text-align: right;
+    font-size: 1.3rem;
+    width: 40%;
+  }
 }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background-color: black;
+  height: 5rem;
+  color: white;
 }
 
 header h1 {
@@ -38,37 +59,58 @@ header h1 {
 }
 
 header button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
   border: none;
   border-radius: 2px;
-  padding: 10px;
+  padding: 10px 30px;
   font-size: 1rem;
+  background-color: #464545;
+  color: white;
 }
 
 header button:hover {
-  color: black;
   cursor: pointer;
 }
 
-#form_container {
-  height: 5rem;
-  margin-top: 0.5rem;
-}
-
-#form_container form {
+.content {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#form_container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  max-width: 500px;
 }
 
 #form_container form #location_input {
-  width: 75%;
-  max-width: 450px;
   border: none;
   color: white;
   padding-left: 15px;
+  width: 80%;
   background-color: #1a659e;
   border-radius: 5px 0px 0px 5px;
   font-size: 1.3rem;
@@ -82,26 +124,83 @@ header button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 150px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
   border: none;
-  padding: none;
+  border-radius: 0px 5px 5px 0px;
+  padding: 0.5rem 0px;
   background-color: #004e89;
   font-size: 1.5rem;
-  padding: 10px 0px;
   color: white;
-  border-radius: 0px 5px 5px 0px;
+  width: 20%;
 }
 
 #form_container form button:hover {
   cursor: pointer;
   background-color: #1a659e;
   color: white;
+}
+
+#form_container #form_error {
+  background-color: #9c3737;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0px 0px 5px 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  padding: 0.3rem 0px;
+  font-size: 1.2rem;
+}
+
+#body_container .curr_info {
+  width: 80%;
+  max-width: 500px;
+}
+
+#body_container .curr_info #curr_info_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#body_container .curr_info #curr_info_header h2 {
+  font-size: 2rem;
+}
+
+#body_container .curr_info #curr_info_header img {
+  height: 3rem;
+}
+
+#body_container .curr_info #curr_description {
+  font-size: 0.8rem;
+  text-align: end;
+}
+
+#body_container .curr_info #curr_temp {
+  font-size: 2.5rem;
+}
+
+#body_container .curr_info #extra_temp_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#body_container .curr_info #extra_temp_info #curr_temp_max {
+  padding-right: 10px;
 }
 /*# sourceMappingURL=App.css.map */

@@ -15,7 +15,7 @@ const Input = ({ locSubmit, invalidLoc }) => {
   };
 
   return (
-    <div id="form_container">
+    <div id="form_container" className="content">
       <form action="" onSubmit={onSubmit}>
         <input
           type="text"

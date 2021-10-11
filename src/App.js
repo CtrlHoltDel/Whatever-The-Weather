@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const setCurrentWeather = async () => {
-      const { location, main, weather } = await getWeather('Doncaster');
+      const { location, main, weather } = await getWeather('Sheffield');
       setWeather(formatWeather(location, main, weather));
     };
 
@@ -37,8 +37,8 @@ function App() {
 
   return (
     <div className="App">
-      <div id="mainContainer">
         <Header scaleToggle={scaleToggle} celsius={celsius} />
+      <div id="mainContainer">
         <Input locSubmit={locSubmit} invalidLoc={invalidLoc} />
         <Info weather={weather} celsius={celsius} />
       </div>

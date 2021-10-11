@@ -1,14 +1,21 @@
+import clear from '../images/weather-icons/clear.png';
+import cloudy from '../images/weather-icons/cloudy.png';
+import rain from '../images/weather-icons/rain.png';
+import storm from '../images/weather-icons/storm.png';
+import snow from '../images/weather-icons/snow.png';
+import mist from '../images/weather-icons/mist.png';
+
 const getImage = (id) => {
   //https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 
   if (id < 300) {
-    return 'thunderstorm';
+    return storm;
   } else if (id < 400) {
-    return 'Drizzle';
+    return rain;
   } else if (id < 600) {
-    return 'Snow';
+    return snow;
   } else if (id === 701) {
-    return 'Mist';
+    return mist;
   } else if (id === 711) {
     return 'Smoke';
   } else if (id === 721) {
@@ -16,9 +23,9 @@ const getImage = (id) => {
   } else if (id < 800) {
     return 'Misc';
   } else if (id === 800) {
-    return 'Clear';
+    return clear;
   } else {
-    return 'Clouds';
+    return cloudy;
   }
 };
 

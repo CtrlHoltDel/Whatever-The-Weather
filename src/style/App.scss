@@ -10,54 +10,81 @@ $search-primary-colour: #004e89;
 $search-secondary-colour: #1a659e;
 
 .App {
-  min-height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
 }
 
-#mainContainer {
-  margin: 20px;
+@media (min-width: 650px) {
+  header {
+    align-items: center;
+    justify-content: center;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    align-items: center;
+    padding-left: 20px;
+    h1 {
+      text-align: right;
+      font-size: 1.3rem;
+      width: 40%;
+    }
+  }
 }
 
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: black;
+  height: 5rem;
+  color: white;
 
   h1 {
     font-weight: bolder;
   }
 
   button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
     border: none;
-
     border-radius: 2px;
-    padding: 10px;
-
+    padding: 10px 30px;
     font-size: 1rem;
+    background-color: rgb(70, 69, 69);
+    color: white;
   }
 
   button:hover {
-    // background-color: $search-secondary-colour;
-    color: black;
     cursor: pointer;
   }
 }
 
-#form_container {
-  height: 5rem;
-  margin-top: 0.5rem;
+.content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
+#form_container {
+  display: flex;
+  flex-direction: column;
   form {
     display: flex;
-    justify-content: center;
+    width: 80%;
+    max-width: 500px;
     #location_input {
-      width: 75%;
-      max-width: 450px;
       border: none;
       color: white;
       padding-left: 15px;
+      width: 80%;
       background-color: $search-secondary-colour;
       border-radius: 5px 0px 0px 5px;
       font-size: 1.3rem;
@@ -69,23 +96,69 @@ header {
 
     button {
       display: flex;
-      max-width: 150px;
       justify-content: center;
       align-items: center;
-      width: 25%;
       border: none;
-      padding: none;
+      border-radius: 0px 5px 5px 0px;
+      padding: 0.5rem 0px;
       background-color: $search-primary-colour;
       font-size: 1.5rem;
-      padding: 10px 0px;
       color: white;
-      border-radius: 0px 5px 5px 0px;
+      width: 20%;
     }
 
     button:hover {
       cursor: pointer;
       background-color: $search-secondary-colour;
       color: white;
+    }
+  }
+
+  #form_error {
+    background-color: rgb(156, 55, 55);
+    width: 60%;
+    display: flex;
+    border-radius: 0px 0px 5px 5px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0.3rem 0px;
+    font-size: 1.2rem;
+  }
+}
+
+#body_container {
+  .curr_info {
+    width: 80%;
+    max-width: 500px;
+
+    #curr_info_header {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-size: 2rem;
+      }
+
+      img {
+        height: 3rem;
+      }
+    }
+
+    #curr_description {
+      font-size: 0.8rem;
+      text-align: end;
+    }
+
+    #curr_temp {
+      font-size: 2.5rem;
+    }
+
+    #extra_temp_info {
+      display: flex;
+
+      #curr_temp_max {
+        padding-right: 10px;
+      }
     }
   }
 }
