@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
 }
 
 .App {
+  font-family: 'Inter', sans-serif;
   max-height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -29,6 +30,13 @@
   header h1 {
     text-align: center;
   }
+  .daily__info__container {
+    font-size: 0.8rem;
+    padding: 0px 8px;
+  }
+  .daily__info__img {
+    width: 40px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -43,13 +51,20 @@
     font-size: 1.3rem;
     width: 40%;
   }
+  .daily__info__container {
+    font-size: 0.6rem;
+    padding: 5px 3px;
+  }
+  .daily__info__img {
+    width: 30px;
+  }
 }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: black;
+  background-color: #004e89;
   height: 5rem;
   color: white;
 }
@@ -63,11 +78,16 @@ header button {
   right: 15px;
   top: 10px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 10px 30px;
-  font-size: 1rem;
-  background-color: #464545;
-  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: #004e89;
+  font-family: 'Staatliches', cursive;
+}
+
+header .selectedScale {
+  color: #001e35;
 }
 
 header button:hover {
@@ -164,12 +184,22 @@ header button:hover {
   font-size: 1.2rem;
 }
 
-#body_container .curr_info {
+#body_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#body_container #current_info {
   width: 80%;
   max-width: 500px;
 }
 
-#body_container .curr_info #curr_info_header {
+#body_container #current_info #current_info_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,30 +208,106 @@ header button:hover {
           justify-content: space-between;
 }
 
-#body_container .curr_info #curr_info_header h2 {
+#body_container #current_info #current_info_header h2 {
   font-size: 2rem;
 }
 
-#body_container .curr_info #curr_info_header img {
-  height: 3rem;
+#body_container #current_info #current_info_header img {
+  height: 5.5rem;
 }
 
-#body_container .curr_info #curr_description {
+#body_container #current_info #current_description {
   font-size: 0.8rem;
   text-align: end;
 }
 
-#body_container .curr_info #curr_temp {
+#body_container #current_info #current_temp {
   font-size: 2.5rem;
 }
 
-#body_container .curr_info #extra_temp_info {
+#body_container #current_info #extra_temp_info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#body_container .curr_info #extra_temp_info #curr_temp_max {
+#body_container #current_info #extra_temp_info #current_temp_max {
   padding-right: 10px;
+}
+
+#body_container #daily__info {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#body_container #daily__info .daily__info__container {
+  background-color: #004e89;
+  border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer_center {
+  background-color: #004e89;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.15rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  min-width: 300px;
+  max-width: 450px;
+  height: 3rem;
+  border-radius: 15px 15px 0 0;
+}
+
+footer .footer_center:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #004e89;
+  border: 2px solid #004e89;
+  border-bottom: 0;
+}
+
+footer .icon_margin {
+  margin-right: 15px;
 }
 /*# sourceMappingURL=App.css.map */

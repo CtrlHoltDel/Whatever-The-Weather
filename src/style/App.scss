@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
 }
 
-$search-primary-colour: #004e89;
-$search-secondary-colour: #1a659e;
+$primary-colour: #004e89;
+$secondary-colour: #1a659e;
 
 .App {
+  font-family: 'Inter', sans-serif;
   max-height: 100vh;
   width: 100vw;
   display: flex;
@@ -24,6 +25,15 @@ $search-secondary-colour: #1a659e;
       text-align: center;
     }
   }
+
+  .daily__info__container {
+    font-size: 0.8rem;
+    padding: 0px 8px;
+  }
+
+  .daily__info__img {
+    width: 40px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -36,11 +46,20 @@ $search-secondary-colour: #1a659e;
       width: 40%;
     }
   }
+
+  .daily__info__container {
+    font-size: 0.6rem;
+    padding: 5px 3px;
+  }
+
+  .daily__info__img {
+    width: 30px;
+  }
 }
 
 header {
   display: flex;
-  background-color: black;
+  background-color: $primary-colour;
   height: 5rem;
   color: white;
 
@@ -53,13 +72,17 @@ header {
     right: 15px;
     top: 10px;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 10px 30px;
-    font-size: 1rem;
-    background-color: rgb(70, 69, 69);
-    color: white;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: $primary-colour;
+    font-family: 'Staatliches', cursive;
   }
 
+  .selectedScale {
+    color: #001e35;
+  }
   button:hover {
     cursor: pointer;
   }
@@ -85,7 +108,7 @@ header {
       color: white;
       padding-left: 15px;
       width: 80%;
-      background-color: $search-secondary-colour;
+      background-color: $secondary-colour;
       border-radius: 5px 0px 0px 5px;
       font-size: 1.3rem;
     }
@@ -101,7 +124,7 @@ header {
       border: none;
       border-radius: 0px 5px 5px 0px;
       padding: 0.5rem 0px;
-      background-color: $search-primary-colour;
+      background-color: $primary-colour;
       font-size: 1.5rem;
       color: white;
       width: 20%;
@@ -109,7 +132,7 @@ header {
 
     button:hover {
       cursor: pointer;
-      background-color: $search-secondary-colour;
+      background-color: $secondary-colour;
       color: white;
     }
   }
@@ -129,11 +152,13 @@ header {
 }
 
 #body_container {
-  .curr_info {
+  display: flex;
+  flex-direction: column;
+  #current_info {
     width: 80%;
     max-width: 500px;
 
-    #curr_info_header {
+    #current_info_header {
       display: flex;
       justify-content: space-between;
       h2 {
@@ -141,25 +166,77 @@ header {
       }
 
       img {
-        height: 3rem;
+        height: 5.5rem;
       }
     }
 
-    #curr_description {
+    #current_description {
       font-size: 0.8rem;
       text-align: end;
     }
 
-    #curr_temp {
+    #current_temp {
       font-size: 2.5rem;
     }
 
     #extra_temp_info {
       display: flex;
 
-      #curr_temp_max {
+      #current_temp_max {
         padding-right: 10px;
       }
     }
+  }
+
+  #daily__info {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    .daily__info__container {
+      background-color: $primary-colour;
+      border-radius: 5px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .footer_center {
+    background-color: $primary-colour;
+    display: flex;
+    justify-content: center;
+    font-size: 1.15rem;
+    align-items: center;
+    color: white;
+    min-width: 300px;
+    max-width: 450px;
+    height: 3rem;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .footer_center:hover {
+    cursor: pointer;
+    background-color: white;
+    color: $primary-colour;
+    border: 2px solid $primary-colour;
+    border-bottom: 0;
+  }
+
+  .icon_margin {
+    margin-right: 15px;
   }
 }

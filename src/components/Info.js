@@ -4,13 +4,10 @@ import WeekForecast from './WeekForecast';
 
 const Info = ({ weather, celsius }) => {
   const { daily } = weather;
-
-  console.log(weather);
-
   return (
     <div id="body_container" className="content">
       <CurrWeather weather={weather} celsius={celsius} />
-      <WeekForecast daily={daily} />
+      <WeekForecast daily={daily} celsius={celsius} />
     </div>
   );
 };

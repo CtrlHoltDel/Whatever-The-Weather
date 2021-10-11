@@ -5,6 +5,7 @@ import Input from './components/Input';
 import Info from './components/Info';
 import { getWeather } from './actions';
 import formatWeather from './utils/utils';
+import Footer from './components/Footer';
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -13,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const setCurrentWeather = async () => {
-      const { location, main, weather, daily } = await getWeather('Sheffield');
+      const { location, main, weather, daily } = await getWeather('London');
       setWeather(formatWeather(location, main, weather, daily));
     };
 
@@ -42,6 +43,7 @@ function App() {
         <Input locSubmit={locSubmit} invalidLoc={invalidLoc} />
         <Info weather={weather} celsius={celsius} />
       </div>
+      <Footer />
     </div>
   );
 }
