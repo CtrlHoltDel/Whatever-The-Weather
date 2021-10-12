@@ -7,9 +7,11 @@ const CurrWeather = ({ weather, celsius }) => {
     <div id="current_info">
       <div id="current_info_header">
         <h2>{location}</h2>
-        <img src={img} alt="" />
+        <div id="curr_desc_img">
+          <img src={img} alt="" />
+          <p id="current_description">{description}</p>
+        </div>
       </div>
-      <p id="current_description">{description}</p>
       <p id="current_temp">{celsius ? `${temp} °C` : `${cToF(temp)} °F`}</p>
       <div id="extra_temp_info">
         <p id="current_temp_max">

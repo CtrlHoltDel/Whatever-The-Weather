@@ -168,8 +168,18 @@ header {
         font-size: 2rem;
       }
 
-      img {
-        height: 5.5rem;
+      #curr_desc_img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          height: 4.5rem;
+          margin-bottom: 5px;
+        }
+
+        #current_description {
+          font-style: italic;
+        }
       }
     }
 

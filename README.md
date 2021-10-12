@@ -1,6 +1,6 @@
 # Whatever The Weather
 
-Retrieves a Weather forecast based upon a users chosen location.
+Retrieves a weather forecast based upon a users chosen location.
 
 [Live Version](https://lucid-nightingale-dfb2da.netlify.app/) hosted on [netlify](https://www.netlify.com/)
 
