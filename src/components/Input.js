@@ -27,7 +27,7 @@ const Input = ({ locSubmit, invalidLoc }) => {
           <BiSearchAlt />
         </button>
       </form>
-      {invalidLoc && <div id="form_error">Error</div>}
+      {invalidLoc && <div id="form_error">Invalid Location</div>}
     </div>
   );
 };

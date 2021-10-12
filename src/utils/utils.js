@@ -10,7 +10,7 @@ import { add } from 'date-fns';
 const getImage = (id) => {
   if (id < 300) {
     return storm;
-  } else if (id <= 500) {
+  } else if (id <= 550) {
     return rain;
   } else if (id <= 400) {
     return snow;
